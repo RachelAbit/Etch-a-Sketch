@@ -1,20 +1,31 @@
 const main_container = document.querySelector('.sketch-container');
 
-const rand_color = () => {
-    return "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase();
-}
+const color = '#FFFF';
 
-const num_divs = 1;
+const num_divs = prompt("Enter a number of boxes: ");
 
-for(let i = 0; i < num_divs; i++){
 
-    let sub_containers = document.createElement('div');
+function main_prog(){
+    for(let i = 0; i < num_divs; i++){
+
+        let sub_container1 = document.createElement('div');
+        sub_container1.style.width = '90px';
+        sub_container1.style.height = '33px';
+        sub_container1.style.display = "flex";
+        sub_container1.style.backgroundColor = color;
+        sub_container1.style.margin = "auto";
+        sub_container1.style.border = '1px solid red';
     
-    sub_containers.style.width = '100px';
-    sub_containers.style.height = '50px';
-    sub_containers.style.backgroundColor = "blue";
-
-    main_container.append(sub_containers);
+    
+        sub_container1.addEventListener('mouseover', () =>{
+            sub_container1.style.backgroundColor = "#97E7E1";
+        })
+    
+        
+    
+        main_container.append(sub_container1);
+    }
 }
 
 
+main_prog();
